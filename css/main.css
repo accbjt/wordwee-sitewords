@@ -1,0 +1,238 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+html {
+    background: url(../img/mainBg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body{
+    background: transparent;
+}
+
+.shareArrow {
+    position: absolute;
+    top: 12%;
+    left: 87%;
+}
+
+.navigation{
+    margin-top: 20px;
+}
+
+footer.orange{
+     background-image: url(../img/footer.png);
+     height: 250px;
+     width: 100%;
+ }
+
+footer{
+    height: 250px;
+    width: 100%;
+}
+
+p.word{
+    font-size: 100px;
+}
+
+
+aside {
+    margin-top: 20px;
+}
+
+.videocontainer {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.displayWord {
+    position: relative;
+    padding-bottom: 56.25%;
+    margin-top: 40px;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+
+.displayWord video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99%;
+    height: 64%;
+    margin-top: 49px;
+}
+
+a .wordButton{
+    text-align:center;
+    display: block;
+}
+
+.videocontainer iframe,
+.videocontainer object,
+.videocontainer embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+a.firstButton,
+a.secondButton,
+a.thirdButton{
+    visibility:hidden;
+    position: relative;
+    color: #363432;
+    text-decoration: none;
+    background-color: #77bae8;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 700;
+    font-size: 2.3em;
+    display: block;
+    height: 50px;
+    padding: 1px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    margin: 20px auto;
+    width: 220px;
+    text-align: center;
+
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+a.firstButton:active,
+a.secondButton:active,
+a.thirdButton:active {
+    -webkit-box-shadow: 0px 3px 0px rgb(50, 55, 219), 0px 3px 6px rgba(0,0,0,.9);
+    -moz-box-shadow: 0px 3px 0px rgb(50, 55, 219), 0px 3px 6px rgba(0,0,0,.9);
+    box-shadow: 0px 3px 0px rgb(50, 55, 219), 0px 3px 6px rgba(0,0,0,.9);
+    position: relative;
+    top: 6px;
+}
+
+a.firstButton{
+    background-color: #ffbee9;
+    -webkit-box-shadow: 0px 9px 0px #c790b4, 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px #c790b4, 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px #c790b4, 0px 9px 25px rgba(0,0,0,.7);
+}
+
+a.thirdButton{
+    background-color: #f68724;
+    -webkit-box-shadow: 0px 9px 0px #cd711f, 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px #cd711f, 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px #cd711f, 0px 9px 25px rgba(0,0,0,.7);
+}
+
+a.closebutton{
+    /*visibility:hidden;*/
+    position: relative;
+    color: #363432;
+    text-decoration: none;
+    background-color: #77bae8;
+    font-family: 'Permanent Marker', cursive;
+    font-weight: 700;
+    font-size: 2.3em;
+    display: block;
+    height: 50px;
+    padding: 1px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    -webkit-box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    -moz-box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    box-shadow: 0px 9px 0px #44a3e5, 0px 9px 25px rgba(0,0,0,.7);
+    margin: 20px auto;
+    width: 100px;
+    text-align: center;
+
+    -webkit-transition: all .1s ease;
+    -moz-transition: all .1s ease;
+    -ms-transition: all .1s ease;
+    -o-transition: all .1s ease;
+    transition: all .1s ease;
+}
+
+.mainContent{
+    margin-top:10px;
+    background-image: url(../img/tv.png);
+    background-size: 100% 100%;
+    background-repeat:no-repeat;
+}
+
+.promo {
+    position: relative;
+    padding-bottom: 44.25%;
+    margin-top: 0px;
+    margin-bottom:10px;
+    padding-top: 0px; height: 0; overflow: hidden;
+}
+
+.promo video{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+
+.mainArea{
+    margin-bottom: 20px;
+}
+
+div .mailbox{
+    margin-top: 10px;
+}
+
+.copyright p {
+    font-size: 12px;
+}
+
+.store img{
+    width: 150px;;
+}
+
+h4{
+    color: #fbf9ff;
+    font-family: 'Permanent Marker', cursive;
+}
+
+form h4{
+    color: #343E57;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.subscribe input{
+    font-family: 'Permanent Marker', cursive;
+    position: relative;
+    font-size: 20pt;
+    left: 5px ;
+    margin: 5px;
+    width: 300px;
+    height: 59px;
+    border-radius: 50px 50px 50px 50px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25) inset, 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.subscribe img{
+    position: relative;
+    left: 0px ;
+}
+
+.subscribe{
+    margin: 30px;
+}
