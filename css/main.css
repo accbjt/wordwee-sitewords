@@ -176,17 +176,20 @@ a.closebutton{
 .promo {
     position: relative;
     padding-bottom: 44.25%;
-    margin-top: 0px;
+    margin-top: 30px;
     margin-bottom:10px;
     padding-top: 0px; height: 0; overflow: hidden;
+    background-image: url(../img/canvas.png);
+    background-size: 105% 100%;
+    background-repeat:no-repeat;
 }
 
 .promo video{
-    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    margin-top: 40px;
 }
 
 
@@ -235,4 +238,37 @@ form h4{
 
 .subscribe{
     margin: 30px;
+}
+
+.addthis_floating_style {
+    position: fixed;
+    position: absolute;
+    background: rgba(255, 255, 255, 0);
+    padding: 5px;
+    text-align: center;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    z-index: 1;
+}
+
+.centerArea{
+    margin-top: 50px;
+}
+
+.centerArea p {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12pt;
+}
+
+.centerArea h4 {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+div.hills{
+    position: fixed;
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }

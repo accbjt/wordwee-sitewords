@@ -3,24 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WordWee</title>
+    <meta property="og:title" content="Kids Learn How to Recognize Words" />
+    <meta property="og:description" content="Wordwee is an online early educational game that teaches your child how to recognize words as early as 2 years old." />
+    <meta content="http://www.wordwee.com/img/wordweePoster.png" property="og:image" />
+      <title>wordwee.com</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/main.css" />
     <link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>
-    
+
   <div class="row">
     <div class="medium-3 columns navigation">
         <a href="./index.html"><img src="./img/wordWeeLogo.png" alt="Word Wee"/></a>
     </div>
-    <div class=" medium-2 columns navigation">
+    <div class=" medium-4 columns navigation">
         <ul class="button-group">
             <li><a href="./game.html" class="playbutton"><img src="./img/playButton.png" alt="Play"/></a></li>
+            <li><a href="site_words/index.html" class="playbutton"><img src="./img/playButton.png" alt="Play"/></a></li>
         </ul>
     </div >
-      <div class=" medium-4 medium-offset-1 columns navigation hide-for-medium-only hide-for-small-only">
+      <div class=" medium-5 columns navigation hide-for-medium-only hide-for-small-only">
           <ul class="button-group">
               <li><a href="#" class="store" data-reveal-id="appleModal"><img src="./img/applestore.png" alt="apple store"/></a></li>
               <li><a href="#" class="store" data-reveal-id="googleModal"><img src="./img/googleplay.png" alt="google play"/></a></li>
@@ -35,29 +39,40 @@
               </div>
           </ul>
       </div >
-    <div class="small-1 small-offset-1 columns hide-for-medium-only hide-for-small-only">
-        <a href="./index.html"><img src="./img/shareButton.png" alt="share"/></a>
-        <img src="./img/shareArrow.png" alt="share"/>
-    </div>
+    <!--<div class="small-1 small-offset-1 columns hide-for-medium-only hide-for-small-only">-->
+        <!--<a href="./index.html"><img src="./img/shareButton.png" alt="share"/></a>-->
+        <!--<img src="./img/shareArrow.png" alt="share"/>-->
+    <!--</div>-->
 </div>
 
 <!-- End Nav -->
 
 <!-- Main Page Content and Sidebar -->
-
 <div class="row">
-
+    <div class="small-12 columns hills">
+        <img src="./img/hills.png" alt=""/>
+    </div>
     <!-- Main Blog Content -->
     <div class="small-11 columns promo" role="content">
-        <div class="">
-            <video controls preload poster="./img/wordweePoster.png">
-                <source src="./videos/promo.mp4" type="video/mp4">
-                <source src="./videos/promo.ogv" type="video/ogv">
-                <source src="./videos/promo.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
+        <div class="row">
+            <!--<div class="centerArea">-->
+                <div class=" small-7 push-2 columns centerArea">
+                    <video controls preload poster="./img/wordweePoster.png">
+                        <source src="./videos/promo.mp4" type="video/mp4">
+                        <source src="./videos/promo.ogv" type="video/ogv">
+                        <source src="./videos/promo.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="small-2 pull-1 columns centerArea">
+                    <h4 style="color: black;">The Wordwee Game</h4>
+                    <p>Wordwee is an online early educational game that teaches your
+                        child how to recognize words as early as 2 years old.</p>
+                </div>
+            <!--</div>-->
             <!--<iframe width="875" height="430" src="http://www.youtube.com/embed/U4_QDf5kT3c?&rel=0&iv_load_policy=3" frameborder="0" allowfullscreen></iframe>-->
         </div>
+
     </div>
 
     <!-- End Main Content -->
@@ -66,11 +81,21 @@
     <!-- Sidebar -->
 
     <aside class="small-1 columns hide-for-small-only">
-        <ul class="side-nav">
-            <li><a href="#"><img src="./img/facebookButton.png" alt="facebook"/></a></li>
-            <li><a href="#"><img src="./img/twitterButton.png" alt="twitter"/></a></li>
-            <li><a href="#"><img src="./img/pinterestButton.png" alt="pinterest"/></a></li>
-        </ul>
+        <!-- AddThis Button BEGIN -->
+        <img src="./img/shareArrow.png" alt="share"/>
+        <div class="addthis_toolbox addthis_50x50_style" style="">
+            <ul class="side-nav">
+                <li><a class="addthis_button_preferred_1"><img src="./img/facebookButton.png" alt="facebook"/></a></li>
+                <li><a class="addthis_button_preferred_2"><img src="./img/twitterButton.png" alt="twitter"/></a></li>
+                <li><a class="addthis_button_preferred_3"><img src="./img/pinterestButton.png" alt="pinterest"/></a></li>
+            </ul>
+        </div>
+        <!-- AddThis Button END -->
+
+            <!--<li><a href="#"><img src="./img/facebookButton.png" alt="facebook"/></a></li>-->
+            <!--<li><a href="#"><img src="./img/twitterButton.png" alt="twitter"/></a></li>-->
+            <!--<li><a href="#"><img src="./img/pinterestButton.png" alt="pinterest"/></a></li>-->
+
     </aside>
 
     <!-- End Sidebar -->
@@ -98,7 +123,7 @@
                 </form>
                 <div class="small-3 columns mailbox">
                     <ul class="inline-list right">
-                        <li><a href="#" data-reveal-id="emailModal"><img src="./img/mailbox.png" alt=""/></a></li>
+                        <li><a href="#" data-reveal-id="emailModal"><img src="./img/mailbox.png" alt="email" class="at_exclude"/></a></li>
                     </ul>
                     <div id="emailModal" class="reveal-modal" data-reveal>
                         <h2>Contact us at info@wordwee.com</h2>
@@ -110,10 +135,20 @@
         <div class="small-12 columns copyright">
             <p>READ OUR PRIVACY POLICY AND TERMS OF SERVICE. © Copyright Icky Media Group All rights reserved. This site uses Google Adwords tracking</p>
         </div>
+        <div class="small-12 columns promoWords">
+            <p></p>
+        </div>
     </div>
+
 </footer>
-    
-    
+
+    <script type="text/javascript">
+        var addthis_config = {
+            "data_track_addressbar":true,
+            "image_exclude": "at_exclude"
+        };
+    </script>
+    <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5387818265c55628"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/foundation.min.js"></script>
     <script>

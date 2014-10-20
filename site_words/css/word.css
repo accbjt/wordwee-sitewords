@@ -1,0 +1,90 @@
+@media only screen and (min-width: 64.063em) and (max-width: 90em) {
+	section.player{
+		display:block;
+		text-align: center;
+		width: 700px;
+	}
+	#gameScreen{
+		background-color: white;
+		display:none;
+		height:456px;
+		margin-bottom: 10px;
+	}
+} /* min-width 1025px and max-width 1440px, use when QAing large screen-only issues */
+#gameScreen{
+		background-color: white;
+		display:block;
+		height:425px;
+		margin-bottom: 35px;
+	}
+#mainScreen{
+		display:block;
+}
+section.player{
+	display:none;
+	text-align: center;
+}
+#keyboard{
+	display: block;
+	text-align: center;
+}
+iframe{
+	margin-top: 10px;
+	width: 100%;
+}
+.wordForm{
+	display:block;
+	text-align: center;
+}
+body{
+	background-color: rgb(193, 237, 252);
+}
+#inputText{
+	text-align: center;
+}
+#inputText p{
+	font-size: 100px;
+}
+#underlineText{
+	position: absolute;
+	top: 200px;
+	text-align: center;
+}
+#underlineText p{
+	color: rgb(192, 187, 187);
+	font-size: 100px;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+#currentWord{
+	text-align: center;
+}
+#currentWord p{
+		margin-bottom: -25px;
+	margin-top: 75px;
+	font-size:100px;
+}
+#wordImage{
+	text-align: center;
+}
+#wordImage img{
+	margin: 30px;
+}
+.listOfWords{
+	list-style-type: none;
+}
+#keyboard li{
+	padding: 4px;
+}
+.row-1{
+	margin: 0px 80px 0px 80px;
+	width:810px;
+}
+.row-2{
+	margin: 0px 5px 0px 5px;
+	width:981px;
+}
+.row-3{
+	margin: 0px 5px 0px 5px;
+	width:990px;
+}
