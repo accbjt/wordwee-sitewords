@@ -35,17 +35,31 @@ function onPlayerStateChange(event) {
 			player.pauseVideo();
 		},1000);
 		$('#gameScreen').show();
+		$('.sound-play').show()
 		$('.player').hide();
+		$('#currentWord').hide();
 		$('#keyboard').show();
 	}
 }
 
+$('.sound-play').on('click', function(){
+	$('.sound-play').hide()
+	document.getElementById('whole-word-sound').play();
+	document.getElementById('whole-word-sound').play();
+	setTimeout(function(){
+		$('#currentWord').show()
+	},500);
+});
+
 function displayWordChosen(){
 	chosenWord = listOfWords[wordIndex].toUpperCase()
 			for(i=0; i<chosenWord.length; i++){
-				$('#currentWord p').append(chosenWord[i])
-				$('#underlineText p').append("_ ")
+				$('#currentWord p').append(chosenWord[i]);
+				$('#underlineText p').append("_ ");
 			};
+			var chosenWordLowercase = chosenWord.toLowerCase();
+			$('#whole-word-sound').attr('src', 'audio/'+chosenWordLowercase+'.mp4');
+			
 };
 displayWordChosen();
 var matchingLetter = 0
@@ -63,6 +77,7 @@ $('#keyboard li').on('click', function(){
 		},500);
 	}
 	if(matchingLetter === chosenWord.length){
+		document.getElementById('whole-word-sound').play();
 		setTimeout(function(){
 			$('#inputText p').remove()
 			$('#inputText').append('<p></p>')
@@ -85,8 +100,6 @@ $('#keyboard li').on('click', function(){
 		};
 	};
 })
-
-
 
 
 

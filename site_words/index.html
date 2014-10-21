@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Foundation | Welcome</title>
+	<title>WordWee Site Words</title>
 	<link rel="stylesheet" href="css/foundation.css" />
 	<link rel="stylesheet" href="css/word.css">
 	<script src="js/vendor/modernizr.js"></script>
@@ -17,6 +17,8 @@
 		</section>
 		<section>
 			<div id="gameScreen">
+				<div class="sound-play">
+				</div>
 				<div>
 					<div id="currentWord" class='row'>
 						<p class="large-12 large-centered columns">
@@ -32,6 +34,9 @@
 					</p>
 				</div>
 			</div>
+			<audio id='whole-word-sound'>
+				<source type="audio/mp4">
+			</audio>
 		</section>
 	</div>
 	<div id="keyboard">
