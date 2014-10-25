@@ -14,7 +14,7 @@
 #gameScreen{
 		background-color: white;
 		display:block;
-		height:425px;
+		height:450px;
 		margin-bottom: 35px;
 	}
 #mainScreen{
@@ -78,20 +78,17 @@ body{
 	padding: 4px;
 }
 .row-1{
-	margin: 0px 80px 0px 80px;
-	width:810px;
+	margin: 0px 170px 0px 170px;
+	width: 800px;
 }
+
 .row-2{
-	margin: 0px 5px 0px 5px;
-	width:981px;
-}
-.row-3{
-	margin: 0px 5px 0px 5px;
-	width:990px;
+	margin: 0px 130px 0px 130px;
+	width: 800px;
 }
 .sound-play{
 	position: absolute;
-	top:150px;
+	top:100px;
 	left:363px;
 	width: 300px;
 	height: 150px;
