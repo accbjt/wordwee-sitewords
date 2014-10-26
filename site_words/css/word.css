@@ -21,8 +21,15 @@
 		display:block;
 }
 section.player{
+	margin-top: 200px;
 	display:none;
 	text-align: center;
+}
+section.player a{
+	position: absolute;
+	width:300px;
+	height:300px;
+	margin-top:10px;
 }
 #keyboard{
 	display: block;
@@ -30,7 +37,7 @@ section.player{
 }
 iframe{
 	margin-top: 10px;
-	width: 100%;
+	width: 30%;
 }
 .wordForm{
 	display:block;
