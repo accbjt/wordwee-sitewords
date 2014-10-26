@@ -18,47 +18,80 @@ firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 shuffle(listOfWords);
 
 function onYouTubeIframeAPIReady() {
-  			player = new YT.Player('player', {
-  				height: '300',
-  				width: '100',
-  				videoId: 'videoseries',
-  				playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMhPErayo5hjHxlTWyNsCAmA']},
-  				events: {
-  					'onReady': onPlayerReady,
-  					'onStateChange': onPlayerStateChange
-  				}
-  			});
+	player = new YT.Player('player', {
+		height: '300',
+		width: '100',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMhPErayo5hjHxlTWyNsCAmA'], index: String(Math.floor(Math.random() * 82) + 1)},
+		events: {
+			'onReady': onPlayerReady,
+			'onStateChange': onPlayerStateChange
+		}
+	});
 
-  			player2 = new YT.Player('player2', {
-  				height: '300',
-  				width: '500',
-  				videoId: 'videoseries',
-  				playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMgaeelOwF7Cr_8JLSWnoPZW']},
-  				events: {
-  					'onReady': onPlayerReady2,
-  					'onStateChange': onPlayerStateChange2
-  				}
-  			});
+	player2 = new YT.Player('player2', {
+		height: '300',
+		width: '500',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMgaeelOwF7Cr_8JLSWnoPZW'], index: String(Math.floor(Math.random() * 2) + 1)},
+		events: {
+			'onReady': onPlayerReady2,
+			'onStateChange': onPlayerStateChange2
+		}
+	});
 
-  			player3 = new YT.Player('player3', {
-  				height: '300',
-  				width: '500',
-  				videoId: 'videoseries',
-  				playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMj5JkChuZsIG9rNG_r4l6GJ']},
-  				events: {
-  					'onReady': onPlayerReady3,
-  					'onStateChange': onPlayerStateChange3
-  				}
-  			});
-  		}
+	player3 = new YT.Player('player3', {
+		height: '300',
+		width: '500',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMj5JkChuZsIG9rNG_r4l6GJ'], index: '1'},
+		events: {
+			'onReady': onPlayerReady3,
+			'onStateChange': onPlayerStateChange3
+		}
+	});
+	player4 = new YT.Player('player4', {
+		height: '300',
+		width: '100',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjYrkpiSKI6RfAHPiwX_nAh'], index: String(Math.floor(Math.random() * 30) + 1)},
+		events: {
+			'onReady': onPlayerReady4,
+			'onStateChange': onPlayerStateChange4
+		}
+	});
+
+	player5 = new YT.Player('player5', {
+		height: '300',
+		width: '500',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 7) + 1)},
+		events: {
+			'onReady': onPlayerReady5,
+			'onStateChange': onPlayerStateChange5
+		}
+	});
+
+	player6 = new YT.Player('player6', {
+		height: '300',
+		width: '500',
+		videoId: 'videoseries',
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMiopQK16KKJRih8vZxV7R7s'], index: String(Math.floor(Math.random() * 2) + 1)},
+		events: {
+			'onReady': onPlayerReady6,
+			'onStateChange': onPlayerStateChange6
+		}
+	});
+}
 
 function onPlayerReady(event) {
+	event.target.setShuffle(true);
 }
 
 function resetPlayer(){
 		$('#gameScreen').show();
 		$('.sound-play').show()
-		$('.player').hide().css('margin-top', '200px');
+		$('.player').hide()
 		$('#currentWord').hide();
 		$('#keyboard').show();
 		playerButton.css('z-index', '-1');
@@ -75,6 +108,7 @@ function onPlayerStateChange(event) {
 	};
 }
 function onPlayerReady2(event) {
+	event.target.setShuffle(true);
 }
 
 function onPlayerStateChange2(event) {
@@ -89,12 +123,55 @@ function onPlayerStateChange2(event) {
 	};
 }
 function onPlayerReady3(event) {
+	event.target.setShuffle(true);
 }
 
 function onPlayerStateChange3(event) {
 	if (event.data === 1){
 		var timer = setTimeout(function(){
 			player3.pauseVideo();
+		},240000);
+	};
+	if(event.data === 2) {
+		clearTimeout(timer);
+		resetPlayer();
+	};
+}
+function onPlayerReady4(event) {
+	event.target.setShuffle(true);
+}
+
+function onPlayerStateChange4(event) {
+	if (event.data === 0) {
+		setTimeout(function(){
+			player4.pauseVideo();
+		},1000);
+		resetPlayer();
+	};
+}
+function onPlayerReady5(event) {
+	event.target.setShuffle(true);
+}
+
+function onPlayerStateChange5(event) {
+	if (event.data === 1){
+		var timer = setTimeout(function(){
+			player5.pauseVideo();
+		},240000);
+	};
+	if(event.data === 2) {
+		clearTimeout(timer);
+		resetPlayer();
+	};
+}
+function onPlayerReady6(event) {
+	event.target.setShuffle(true);
+}
+
+function onPlayerStateChange6(event) {
+	if (event.data === 1){
+		var timer = setTimeout(function(){
+			player6.pauseVideo();
 		},240000);
 	};
 	if(event.data === 2) {
@@ -150,7 +227,6 @@ $('#keyboard li').on('click', function(){
 			wordIndex = ++wordIndex;
 			$('#gameScreen').toggle();
 			$('.player').toggle();
-			player.setShuffle(true);
 			$('#keyboard').hide();
 		},1000);
 		setTimeout(function(){
@@ -194,7 +270,6 @@ $('.player span').on('click', 'a', function() {
 				$('iframe').attr('height', '720px');
 				$('.player').css('margin-top', '0px')
 			});
-
 
 
 
