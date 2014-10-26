@@ -91,7 +91,7 @@ function onPlayerReady(event) {
 function resetPlayer(){
 		$('#gameScreen').show();
 		$('.sound-play').show()
-		$('.player').hide()
+		$('.player').hide().css('margin-top', '60px')
 		$('#currentWord').hide();
 		$('#keyboard').show();
 		playerButton.css('z-index', '-1');
@@ -103,8 +103,8 @@ function onPlayerStateChange(event) {
 	if (event.data === 0) {
 		setTimeout(function(){
 			player.pauseVideo();
-		},1000);
-		resetPlayer();
+			resetPlayer();
+		},4000);
 	};
 }
 function onPlayerReady2(event) {
@@ -145,8 +145,8 @@ function onPlayerStateChange4(event) {
 	if (event.data === 0) {
 		setTimeout(function(){
 			player4.pauseVideo();
-		},1000);
-		resetPlayer();
+			resetPlayer();
+		},4000);
 	};
 }
 function onPlayerReady5(event) {
@@ -268,7 +268,7 @@ $('.player span').on('click', 'a', function() {
 				playerButton.css('z-index', '-1');
 				$('iframe').css('width', '100%');
 				$('iframe').attr('height', '720px');
-				$('.player').css('margin-top', '0px')
+				$('.player').css('margin-top', '10px')
 			});
 
 
