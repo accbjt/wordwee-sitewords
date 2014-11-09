@@ -229,13 +229,7 @@ $('#keyboard li').on('click', function(){
 			matchingLetter = 0
 			wordIndex = ++wordIndex;
 			level2();
-			// $('#gameScreen').toggle();
-			// $('.player').toggle();
-			// $('#keyboard').hide();
 		},1000);
-		// setTimeout(function(){
-		// 	displayWordChosen();
-		// },3000);
 		if(wordIndex === (listOfWords.length-1)){
 			wordIndex = 0
 		};
@@ -254,6 +248,20 @@ function level2(){
 	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
 	$('#matchFullWord li:nth-child(3) a').append(l2ListOfWords[2])
 	$('#matchFullWord li:nth-child(4) a').append(l2ListOfWords[3])
+	$('#matchFullWord li').on('click', function(){ 
+		var word = $(this).children().text().toUpperCase();
+			if(word === chosenWord){
+				$('#gameScreen').toggle();
+				$('.player').toggle();
+				$('#keyboard').hide();
+				setTimeout(function(){
+					displayWordChosen();
+				},3000);
+				$('#matchFullWord li a').empty()
+			}else{
+				console.log('not correct');
+			};
+		});
 };
 
 //shuffle function for shuffling the words
