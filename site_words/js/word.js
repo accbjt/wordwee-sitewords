@@ -205,6 +205,9 @@ var matchingLetter = 0
 $('#keyboard li').on('click', function(){
 	var button = $(this).text()
 	$('#inputText p').append(button)
+	// $('body').append('<audio id="letter-sound"><source src="audio/'+button.toLowerCase()+'-letter.mp4"'+' type= "audio/ogg"></audio>')
+	// document.getElementById('letter-sound').play();
+	// document.getElementById('letter-sound').play();
 	if(button === chosenWord[matchingLetter]){
 		matchingLetter = ++matchingLetter
 	}else{
@@ -225,18 +228,33 @@ $('#keyboard li').on('click', function(){
 			$('#underlineText').append('<p></p>')
 			matchingLetter = 0
 			wordIndex = ++wordIndex;
-			$('#gameScreen').toggle();
-			$('.player').toggle();
-			$('#keyboard').hide();
+			level2();
+			// $('#gameScreen').toggle();
+			// $('.player').toggle();
+			// $('#keyboard').hide();
 		},1000);
-		setTimeout(function(){
-			displayWordChosen();
-		},3000);
+		// setTimeout(function(){
+		// 	displayWordChosen();
+		// },3000);
 		if(wordIndex === (listOfWords.length-1)){
 			wordIndex = 0
 		};
 	};
 })
+
+function level2(){
+	var l2ListOfWords = []
+	for(i = 0; i < 4; i++){
+		l2ListOfWords.push(listOfWords[i])
+	};
+	shuffle(l2ListOfWords);
+	shuffle(l2ListOfWords);
+	shuffle(l2ListOfWords);
+	$('#matchFullWord li:nth-child(1) a').append(l2ListOfWords[0])
+	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
+	$('#matchFullWord li:nth-child(3) a').append(l2ListOfWords[2])
+	$('#matchFullWord li:nth-child(4) a').append(l2ListOfWords[3])
+};
 
 //shuffle function for shuffling the words
 function shuffle(array) {
