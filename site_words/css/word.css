@@ -68,7 +68,7 @@ body{
 	text-align: center;
 }
 #currentWord p{
-		margin-bottom: -25px;
+	margin-bottom: -25px;
 	margin-top: 75px;
 	font-size:100px;
 }
@@ -103,4 +103,23 @@ body{
 	background-size: 300px 150px;
     background-repeat: no-repeat;
     z-index: 1;
+}
+
+#matchFullWord{
+	display: none;
+}
+
+#matchFullWord ul{
+	margin-top: 75px;
+	margin-left: 250px;
+	margin-right: auto;
+	width: 499px;
+}
+
+#matchFullWord li{
+}
+
+#matchFullWord a{
+	width: 500px;
+	font-size: 70px;
 }

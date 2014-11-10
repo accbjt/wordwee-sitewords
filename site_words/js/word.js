@@ -33,7 +33,7 @@ function onYouTubeIframeAPIReady() {
 		height: '300',
 		width: '500',
 		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMgaeelOwF7Cr_8JLSWnoPZW'], index: String(Math.floor(Math.random() * 2) + 1)},
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLa-1PIc8LnSrwqDraaTLnzO21FyRfa3w_'], index: String(Math.floor(Math.random() * 2) + 1)},
 		events: {
 			'onReady': onPlayerReady2,
 			'onStateChange': onPlayerStateChange2
@@ -65,7 +65,7 @@ function onYouTubeIframeAPIReady() {
 		height: '300',
 		width: '500',
 		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 7) + 1)},
+		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 6) + 1)},
 		events: {
 			'onReady': onPlayerReady5,
 			'onStateChange': onPlayerStateChange5
@@ -222,10 +222,9 @@ $('#keyboard li').on('click', function(){
 		setTimeout(function(){
 			$('#inputText p').remove()
 			$('#inputText').append('<p></p>')
-			$('#currentWord p').remove()
-			$('#currentWord').append('<p></p>')
-			$('#underlineText p').remove()
-			$('#underlineText').append('<p></p>')
+			$('#currentWord').hide();
+			$('#underlineText').hide();
+
 			matchingLetter = 0
 			wordIndex = ++wordIndex;
 			level2();
@@ -242,24 +241,41 @@ function level2(){
 		l2ListOfWords.push(listOfWords[i])
 	};
 	shuffle(l2ListOfWords);
-	shuffle(l2ListOfWords);
-	shuffle(l2ListOfWords);
 	$('#matchFullWord li:nth-child(1) a').append(l2ListOfWords[0])
 	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
 	$('#matchFullWord li:nth-child(3) a').append(l2ListOfWords[2])
 	$('#matchFullWord li:nth-child(4) a').append(l2ListOfWords[3])
+	$('#matchFullWord').show();
+	$('#keyboard').hide();
+	setTimeout(function(){
+		document.getElementById('whole-word-sound').play();
+	}, 500)
 	$('#matchFullWord li').on('click', function(){ 
 		var word = $(this).children().text().toUpperCase();
 			if(word === chosenWord){
 				$('#gameScreen').toggle();
 				$('.player').toggle();
-				$('#keyboard').hide();
 				setTimeout(function(){
 					displayWordChosen();
 				},3000);
 				$('#matchFullWord li a').empty()
 			}else{
 				console.log('not correct');
+				shuffle(l2ListOfWords);
+				$('#keyboard').show();
+				$('#matchFullWord').hide()
+				$('#currentWord').show();
+				$('#underlineText').show();
+				$('#matchFullWord li a').empty();
+				document.getElementById('whole-word-sound').play();
+				// $('#matchFullWord li').hide();
+				// setTimeout(function(){
+				// 	$('#matchFullWord li:nth-child(1) a').append(l2ListOfWords[0])
+				// 	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
+				// 	$('#matchFullWord li:nth-child(3) a').append(l2ListOfWords[2])
+				// 	$('#matchFullWord li:nth-child(4) a').append(l2ListOfWords[3])
+				// 	$('#matchFullWord li').show();
+				// },500)
 			};
 		});
 };
