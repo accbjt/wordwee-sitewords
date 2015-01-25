@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="css/foundation.css" />
+</head>
+  <body>
+    <!-- 1. The <iframe> (and video player) will replace this <div> tag. -->
+    <div id="player1"></div>
+    <div id="player2"></div>
+    <div id="player3"></div>
+    <div><a href="#" class='button'>Click</a></div>
+    <script src="js/vendor/jquery.js"></script>
+    <script>
+      var tag = document.createElement('script');
+
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    var videos = ['M7lc1UVf-VE','gEdGtj8Anno','AajZuLs-Rsc'];
+    var players = [];
+
+    function onYouTubeIframeAPIReady() {
+      for(var i=0;i<videos.length;i++){
+          var num = i+1
+          players[num] = new YT.Player('player'+num, {
+            height: '390',
+            width: '640',
+            videoId: videos[i],
+            events: {
+              'onReady': onPlayerReady,
+              'onStateChange': onPlayerStateChange
+            }
+          });
+          function onPlayerReady(event) {
+            // event.target.playVideo();
+          }
+          function onPlayerStateChange(event) {
+          }
+      }
+    };
+
+    $(function(){
+      $('.button').on('click', function(){
+        var duration = players[1].getDuration();
+        console.log(duration*10/2)
+        players[1].playVideo();
+        checkPlayerState();
+      });
+      function checkPlayerState(){
+        if(players[1].getPlayerState() !== 0){
+          setTimeout(function(){
+             checkPlayerState();
+             console.log('check');
+          },1000)
+        }else{
+          console.log('stopped')
+          players[1].playVideo();
+          setTimeout(function(){
+            players[1].pauseVideo();
+          },1000)
+        }
+      };
+    });
+
+    </script>
+  </body>
+</html>

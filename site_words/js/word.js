@@ -1,88 +1,92 @@
 // 2. This code loads the IFrame Player API code asynchronously.
 $(document).foundation();
-var tag = document.createElement('script'),
-    player;
+// var tag = document.createElement('script'),
+//     player;
 
+// var wordPicked = ['see','my','to','and','go'];
+// var json_str = JSON.stringify(wordPicked);
+// createCookie('mycookie', json_str);
 
 var listOfWords = ['see','my','to','and','go','is','said','the','for','play','can','you','me','it','big','in','we','not','down','where','little','help','like','have','she','are','was','he','they','with','on','this','at','what','do','no','want','who','but','a','up','his','him','had','yes'],
 	wordIndex = 0,
 	videoIndex = 0,
-	playerButton = $('span.player a');
+	playerButton = $('span.player a'),
+	level=0
 
 var tag = document.createElement('script');
 
-tag.src = "https://www.youtube.com/iframe_api";
-var firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 shuffle(listOfWords);
 
-function onYouTubeIframeAPIReady() {
-	player = new YT.Player('player', {
-		height: '300',
-		width: '100',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMhPErayo5hjHxlTWyNsCAmA'], index: String(Math.floor(Math.random() * 82) + 1)},
-		events: {
-			'onReady': onPlayerReady,
-			'onStateChange': onPlayerStateChange
-		}
-	});
+// function onYouTubeIframeAPIReady() {
+// 	player = new YT.Player('player', {
+// 		height: '300',
+// 		width: '100',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMhPErayo5hjHxlTWyNsCAmA'], index: String(Math.floor(Math.random() * 82) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady,
+// 			'onStateChange': onPlayerStateChange
+// 		}
+// 	});
 
-	player2 = new YT.Player('player2', {
-		height: '300',
-		width: '500',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLa-1PIc8LnSrwqDraaTLnzO21FyRfa3w_'], index: String(Math.floor(Math.random() * 2) + 1)},
-		events: {
-			'onReady': onPlayerReady2,
-			'onStateChange': onPlayerStateChange2
-		}
-	});
+// 	player2 = new YT.Player('player2', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLF7D6D82DC1148673'], index: String(Math.floor(Math.random() * 5) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady2,
+// 			'onStateChange': onPlayerStateChange2
+// 		}
+// 	});
 
-	player3 = new YT.Player('player3', {
-		height: '300',
-		width: '500',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMj5JkChuZsIG9rNG_r4l6GJ'], index: '1'},
-		events: {
-			'onReady': onPlayerReady3,
-			'onStateChange': onPlayerStateChange3
-		}
-	});
-	player4 = new YT.Player('player4', {
-		height: '300',
-		width: '100',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjYrkpiSKI6RfAHPiwX_nAh'], index: String(Math.floor(Math.random() * 30) + 1)},
-		events: {
-			'onReady': onPlayerReady4,
-			'onStateChange': onPlayerStateChange4
-		}
-	});
+// 	player3 = new YT.Player('player3', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLD1A982F8D26AA80E'], index: String(Math.floor(Math.random() * 10) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady3,
+// 			'onStateChange': onPlayerStateChange3
+// 		}
+// 	});
+// 	player4 = new YT.Player('player4', {
+// 		height: '300',
+// 		width: '100',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjYrkpiSKI6RfAHPiwX_nAh'], index: String(Math.floor(Math.random() * 30) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady4,
+// 			'onStateChange': onPlayerStateChange4
+// 		}
+// 	});
 
-	player5 = new YT.Player('player5', {
-		height: '300',
-		width: '500',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 6) + 1)},
-		events: {
-			'onReady': onPlayerReady5,
-			'onStateChange': onPlayerStateChange5
-		}
-	});
+// 	player5 = new YT.Player('player5', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 6) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady5,
+// 			'onStateChange': onPlayerStateChange5
+// 		}
+// 	});
 
-	player6 = new YT.Player('player6', {
-		height: '300',
-		width: '500',
-		videoId: 'videoseries',
-		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMiopQK16KKJRih8vZxV7R7s'], index: String(Math.floor(Math.random() * 2) + 1)},
-		events: {
-			'onReady': onPlayerReady6,
-			'onStateChange': onPlayerStateChange6
-		}
-	});
-}
+// 	player6 = new YT.Player('player6', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLRXl0CbI9TdcVd6RK1VMotJ3RoR5I25RA'], index: String(Math.floor(Math.random() * 30) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady6,
+// 			'onStateChange': onPlayerStateChange6
+// 		}
+// 	});
+// }
 
 function onPlayerReady(event) {
 	event.target.setShuffle(true);
@@ -92,7 +96,8 @@ function resetPlayer(){
 		$('#gameScreen').show();
 		$('.sound-play').show()
 		$('.player').hide().css('margin-top', '60px')
-		$('#currentWord').hide();
+		$('#currentWord p').show();
+		$('#underlineText').show();
 		$('#keyboard').show();
 		playerButton.css('z-index', '-1');
 		$('span').show();
@@ -127,15 +132,21 @@ function onPlayerReady3(event) {
 }
 
 function onPlayerStateChange3(event) {
-	if (event.data === 1){
-		var timer = setTimeout(function(){
+	if (event.data === 0) {
+		setTimeout(function(){
 			player3.pauseVideo();
-		},240000);
+			resetPlayer();
+		},4000);
 	};
-	if(event.data === 2) {
-		clearTimeout(timer);
-		resetPlayer();
-	};
+	// if (event.data === 1){
+	// 	var timer = setTimeout(function(){
+	// 		player3.pauseVideo();
+	// 	},240000);
+	// };
+	// if(event.data === 2) {
+	// 	clearTimeout(timer);
+	// 	resetPlayer();
+	// };
 }
 function onPlayerReady4(event) {
 	event.target.setShuffle(true);
@@ -190,6 +201,9 @@ $('.sound-play').on('click', function(){
 });
 
 function displayWordChosen(){
+	$('#currentWord p').empty();
+	$('#matchFullWord li a').empty()
+	$('#underlineText p').empty();
 	chosenWord = listOfWords[wordIndex].toUpperCase()
 			for(i=0; i<chosenWord.length; i++){
 				$('#currentWord p').append(chosenWord[i]);
@@ -200,34 +214,57 @@ function displayWordChosen(){
 			
 };
 displayWordChosen();
-var matchingLetter = 0
+var matchingLetter = 0,
+	wrongLetter = 0
 
 $('#keyboard li').on('click', function(){
 	var button = $(this).text()
 	$('#inputText p').append(button)
-	// $('body').append('<audio id="letter-sound"><source src="audio/'+button.toLowerCase()+'-letter.mp4"'+' type= "audio/ogg"></audio>')
-	// document.getElementById('letter-sound').play();
-	// document.getElementById('letter-sound').play();
 	if(button === chosenWord[matchingLetter]){
 		matchingLetter = ++matchingLetter
+		wrongLetter = 0
 	}else{
 		setTimeout(function(){
 			var correctLetters = $('#inputText p').text().slice(0,-1)
 			    $('#inputText p').remove()
 			    $('#inputText').append('<p>'+correctLetters+'</p>')
 		},500);
+		if(level === 3){
+			document.getElementById('whole-word-sound').play();
+			wrongLetter = ++wrongLetter
+			console.log('wrong letter '+wrongLetter)
+			if (wrongLetter === 4){
+				$('#currentWord').css('visibility','visible');
+				level = 0
+				wrongLetter = 0
+			}
+		}
 	}
+		console.log('original= '+chosenWord)
 	if(matchingLetter === chosenWord.length){
-		document.getElementById('whole-word-sound').play();
 		setTimeout(function(){
 			$('#inputText p').remove()
 			$('#inputText').append('<p></p>')
 			$('#currentWord').hide();
 			$('#underlineText').hide();
-
 			matchingLetter = 0
-			wordIndex = ++wordIndex;
-			level2();
+			if(level === 3){
+				$('#gameScreen').show();
+				$('.player').show();
+				$('#keyboard').hide();
+				setTimeout(function(){
+					displayWordChosen();
+				},3000);
+				$('#currentWord p').hide();
+				$('#matchFullWord').hide();
+				$( "#matchFullWord li" ).unbind( "click");
+				level = 0
+				wordIndex = ++wordIndex;
+				$('#currentWord').css('visibility','visible');
+			}else{
+				level = 2
+				level2()
+			}
 		},1000);
 		if(wordIndex === (listOfWords.length-1)){
 			wordIndex = 0
@@ -236,10 +273,15 @@ $('#keyboard li').on('click', function(){
 })
 
 function level2(){
-	var l2ListOfWords = []
-	for(i = 0; i < 4; i++){
+	console.log(listOfWords)
+	console.log(wordIndex)
+    var	l2ListOfWords = [],
+    	wordIndexPlus = wordIndex+4
+    	console.log(wordIndexPlus)
+	for(i = wordIndex; i < wordIndexPlus; i++){
 		l2ListOfWords.push(listOfWords[i])
 	};
+	console.log(l2ListOfWords)
 	shuffle(l2ListOfWords);
 	$('#matchFullWord li:nth-child(1) a').append(l2ListOfWords[0])
 	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
@@ -250,35 +292,37 @@ function level2(){
 	setTimeout(function(){
 		document.getElementById('whole-word-sound').play();
 	}, 500)
+	$( "#matchFullWord li" ).bind( "click");
 	$('#matchFullWord li').on('click', function(){ 
 		var word = $(this).children().text().toUpperCase();
 			if(word === chosenWord){
-				$('#gameScreen').toggle();
-				$('.player').toggle();
-				setTimeout(function(){
-					displayWordChosen();
-				},3000);
-				$('#matchFullWord li a').empty()
+				level = 3
+				level3();
 			}else{
-				console.log('not correct');
 				shuffle(l2ListOfWords);
+				console.log("wrong = "+l2ListOfWords)
 				$('#keyboard').show();
 				$('#matchFullWord').hide()
 				$('#currentWord').show();
 				$('#underlineText').show();
 				$('#matchFullWord li a').empty();
 				document.getElementById('whole-word-sound').play();
-				// $('#matchFullWord li').hide();
-				// setTimeout(function(){
-				// 	$('#matchFullWord li:nth-child(1) a').append(l2ListOfWords[0])
-				// 	$('#matchFullWord li:nth-child(2) a').append(l2ListOfWords[1])
-				// 	$('#matchFullWord li:nth-child(3) a').append(l2ListOfWords[2])
-				// 	$('#matchFullWord li:nth-child(4) a').append(l2ListOfWords[3])
-				// 	$('#matchFullWord li').show();
-				// },500)
+				$( "#matchFullWord li" ).unbind( "click");
 			};
 		});
 };
+
+function level3(){
+	console.log('level3')
+	$('#keyboard').show();
+	$('#underlineText').show()
+	$('#currentWord p').show()
+	$('#matchFullWord').hide();
+	$('#matchFullWord li a').empty()
+	$( "#matchFullWord li" ).unbind( "click");
+	document.getElementById('whole-word-sound').play();
+	$('#currentWord').css('visibility', 'hidden').show();
+}
 
 //shuffle function for shuffling the words
 function shuffle(array) {
