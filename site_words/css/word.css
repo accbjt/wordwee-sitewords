@@ -21,23 +21,34 @@
 		display:block;
 }
 section.player{
-	margin-top: 60px;
+	margin: 10px;
 	display:none;
 	text-align: center;
 }
 section.player a{
 	position: absolute;
-	width:300px;
-	height:300px;
-	margin-top:10px;
+	width:298px;
+	height:150px;
+	margin:10px;
+}
+section.player a.fullscreen{
+	position: absolute;
+	width: 92%;
+	height: 97%;
+	z-index: 1;
 }
 #keyboard{
 	display: block;
 	text-align: center;
 }
 iframe{
-	margin-top: 10px;
+	margin: 10px;
 	width: 30%;
+	height: 50%;
+}
+iframe.fullscreen{
+	width: 95%;
+	height: 720px;
 }
 .wordForm{
 	display:block;

@@ -13,7 +13,7 @@ var listOfWords = ['see','my','to','and','go','is','said','the','for','play','ca
 	playerButton = $('span.player a'),
 	level=0
 
-var tag = document.createElement('script');
+// var tag = document.createElement('script');
 
 // tag.src = "https://www.youtube.com/iframe_api";
 // var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -88,9 +88,9 @@ shuffle(listOfWords);
 // 	});
 // }
 
-function onPlayerReady(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerReady(event) {
+// 	event.target.setShuffle(true);
+// }
 
 function resetPlayer(){
 		$('#gameScreen').show();
@@ -104,92 +104,92 @@ function resetPlayer(){
 		$('iframe').attr('height','300px').css('width', '30%');
 };
 
-function onPlayerStateChange(event) {
-	if (event.data === 0) {
-		setTimeout(function(){
-			player.pauseVideo();
-			resetPlayer();
-		},4000);
-	};
-}
-function onPlayerReady2(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerStateChange(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// }
+// function onPlayerReady2(event) {
+// 	event.target.setShuffle(true);
+// }
 
-function onPlayerStateChange2(event) {
-	if (event.data === 1){
-		var timer = setTimeout(function(){
-			player2.pauseVideo();
-		},240000);
-	};
-	if(event.data === 2) {
-		clearTimeout(timer);
-		resetPlayer();
-	};
-}
-function onPlayerReady3(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerStateChange2(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player2.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
+// function onPlayerReady3(event) {
+// 	event.target.setShuffle(true);
+// }
 
-function onPlayerStateChange3(event) {
-	if (event.data === 0) {
-		setTimeout(function(){
-			player3.pauseVideo();
-			resetPlayer();
-		},4000);
-	};
-	// if (event.data === 1){
-	// 	var timer = setTimeout(function(){
-	// 		player3.pauseVideo();
-	// 	},240000);
-	// };
-	// if(event.data === 2) {
-	// 	clearTimeout(timer);
-	// 	resetPlayer();
-	// };
-}
-function onPlayerReady4(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerStateChange3(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player3.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// 	// if (event.data === 1){
+// 	// 	var timer = setTimeout(function(){
+// 	// 		player3.pauseVideo();
+// 	// 	},240000);
+// 	// };
+// 	// if(event.data === 2) {
+// 	// 	clearTimeout(timer);
+// 	// 	resetPlayer();
+// 	// };
+// }
+// function onPlayerReady4(event) {
+// 	event.target.setShuffle(true);
+// }
 
-function onPlayerStateChange4(event) {
-	if (event.data === 0) {
-		setTimeout(function(){
-			player4.pauseVideo();
-			resetPlayer();
-		},4000);
-	};
-}
-function onPlayerReady5(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerStateChange4(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player4.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// }
+// function onPlayerReady5(event) {
+// 	event.target.setShuffle(true);
+// }
 
-function onPlayerStateChange5(event) {
-	if (event.data === 1){
-		var timer = setTimeout(function(){
-			player5.pauseVideo();
-		},240000);
-	};
-	if(event.data === 2) {
-		clearTimeout(timer);
-		resetPlayer();
-	};
-}
-function onPlayerReady6(event) {
-	event.target.setShuffle(true);
-}
+// function onPlayerStateChange5(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player5.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
+// function onPlayerReady6(event) {
+// 	event.target.setShuffle(true);
+// }
 
-function onPlayerStateChange6(event) {
-	if (event.data === 1){
-		var timer = setTimeout(function(){
-			player6.pauseVideo();
-		},240000);
-	};
-	if(event.data === 2) {
-		clearTimeout(timer);
-		resetPlayer();
-	};
-}
+// function onPlayerStateChange6(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player6.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
 
 $('.sound-play').on('click', function(){
 	$('.sound-play').hide()
@@ -347,15 +347,15 @@ function shuffle(array) {
     return array;
 };
 
-$('.player span').on('click', 'a', function() {
-		$(this)
-			.next()
-				$(this).parent().siblings().hide();
-				playerButton.css('z-index', '-1');
-				$('iframe').css('width', '100%');
-				$('iframe').attr('height', '720px');
-				$('.player').css('margin-top', '10px')
-			});
+// $('.player span').on('click', 'a', function() {
+// 		$(this)
+// 			.next()
+// 				$(this).parent().siblings().hide();
+// 				playerButton.css('z-index', '-1');
+// 				$('iframe').css('width', '100%');
+// 				$('iframe').attr('height', '720px');
+// 				$('.player').css('margin-top', '10px')
+// 			});
 
 
 
