@@ -21,17 +21,27 @@
 		display:block;
 }
 section.player{
-	margin: 10px;
+	margin-top: 20px;
 	display:none;
 	text-align: center;
 }
 section.player a{
 	position: absolute;
-	width:298px;
-	height:150px;
+	width:175px;
+	height:175px;
 	margin:10px;
 }
-section.player a.fullscreen{
+section.player a.fullscreen-play{
+	position: absolute;
+	width: 92%;
+	height: 97%;
+	z-index: 1;
+	background-image: url("../img/videoPlayButton.png");
+	background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+section.player a.fullscreen-pause{
 	position: absolute;
 	width: 92%;
 	height: 97%;
@@ -42,12 +52,11 @@ section.player a.fullscreen{
 	text-align: center;
 }
 iframe{
-	margin: 10px;
-	width: 30%;
-	height: 50%;
+	width: 100%;
+	height: 100%;
 }
-iframe.fullscreen{
-	width: 95%;
+td.fullscreen{
+	width: 1000px;
 	height: 720px;
 }
 .wordForm{

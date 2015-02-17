@@ -190,8 +190,14 @@ function resetPlayer(){
 // 		resetPlayer();
 // 	};
 // }
+function fullscreen(){
+	var el = document.documentElement, 
+	rfs = el.webkitRequestFullScreen;
+    rfs.call(el);
+}
 
 $('.sound-play').on('click', function(){
+	fullscreen();
 	$('.sound-play').hide()
 	document.getElementById('whole-word-sound').play();
 	document.getElementById('whole-word-sound').play();
@@ -346,16 +352,6 @@ function shuffle(array) {
 
     return array;
 };
-
-// $('.player span').on('click', 'a', function() {
-// 		$(this)
-// 			.next()
-// 				$(this).parent().siblings().hide();
-// 				playerButton.css('z-index', '-1');
-// 				$('iframe').css('width', '100%');
-// 				$('iframe').attr('height', '720px');
-// 				$('.player').css('margin-top', '10px')
-// 			});
 
 
 
