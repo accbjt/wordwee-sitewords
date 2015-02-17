@@ -95,13 +95,11 @@ shuffle(listOfWords);
 function resetPlayer(){
 		$('#gameScreen').show();
 		$('.sound-play').show()
-		$('.player').hide().css('margin-top', '60px')
+		$('.player').hide();
 		$('#currentWord p').show();
 		$('#underlineText').show();
 		$('#keyboard').show();
 		playerButton.css('z-index', '-1');
-		$('span').show();
-		$('iframe').attr('height','300px').css('width', '30%');
 };
 
 // function onPlayerStateChange(event) {
@@ -190,6 +188,40 @@ function resetPlayer(){
 // 		resetPlayer();
 // 	};
 // }
+
+function searchForVideos(){
+  $.ajax({
+    url: 'https://gdata.youtube.com/feeds/api/videos?q=mya+full+time+kid&start-index=1&safeSearch=strict&max-results=50&durations=short&v=2&alt=jsonc',
+    dataType: "json",
+    success:  function(data) {
+      var youtubeJsonList = data.data.items
+      youtubeJsonList.forEach(function(data){
+       videos.push(data.id.toString());
+       videoThumbnails.push(data.thumbnail.sqDefault);
+     })
+        // function for creating a row and column
+      var rows = 10; //here's your number of rows and columns
+      var cols = 5;
+      var table = $('<table><tbody>');
+      for(var r = 0; r < rows; r++){
+        var tr = $('<tr>');
+        for (var c = 0; c < cols; c++)
+          $('<td></td>').appendTo(tr); //fill in your cells with something meaningful here
+        tr.appendTo(table);
+      }
+
+      table.appendTo('section.player');
+      $('.player td').each(function(index){
+        // $(this).append('<a href="#"></a><div id="videoPlayer'+index+'"></div>')
+        $(this).append('<a href="#"></a><img class="video-image" src='+videoThumbnails[index]+'></div>')
+      })
+      
+      // onYouTubeIframeAPIReady();
+      chosenVideoToPlay();
+    }
+  });
+};
+
 function fullscreen(){
 	var el = document.documentElement, 
 	rfs = el.webkitRequestFullScreen;
@@ -255,6 +287,7 @@ $('#keyboard li').on('click', function(){
 			$('#underlineText').hide();
 			matchingLetter = 0
 			if(level === 3){
+				searchForVideos();
 				$('#gameScreen').show();
 				$('.player').show();
 				$('#keyboard').hide();
