@@ -45,8 +45,17 @@ section.player a.fullscreen-pause{
 	position: absolute;
 	width: 92%;
 	height: 97%;
-	z-index: 1;
+	z-index: -1;
 }
+
+.close{
+	height: 50px !important;
+	width: 50px !important;
+	position: absolute;
+	left: 910px;
+	z-index:2;
+}
+
 #keyboard{
 	display: block;
 	text-align: center;
@@ -58,6 +67,12 @@ iframe{
 td.fullscreen{
 	width: 1000px;
 	height: 720px;
+}
+.searchScreen td{
+	text-align: center;
+}
+table{
+	margin-top:10px;
 }
 .wordForm{
 	display:block;

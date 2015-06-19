@@ -7,15 +7,93 @@ $(document).foundation();
 // var json_str = JSON.stringify(wordPicked);
 // createCookie('mycookie', json_str);
 
-var listOfWords = ['see','my','to','and','go','is','said','the','for','play','can','you','me','it','big','in','we','not','down','where','little','help','like','have','she','are','was','he','they','with','on','this','at','what','do','no','want','who','but','a','up','his','him','had','yes','baby','banana','car','cat','chimpanzee','clap','diaper','dog','milk','rhinoceros','spider'],
+var listOfWords = ['see','my','to','and','go','is','said','the','for','play','can','you','me','it','big','in','we','not','down','where','little','help','like','have','she','are','was','he','they','with','on','this','at','what','do','no','want','who','but','a','up','his','him','had','yes'],
 	wordIndex = 0,
 	videoIndex = 0,
 	playerButton = $('span.player a'),
 	level = 0,
-	searchWords = ['full time kid','frozen','pokemon','minecraft','doggy','lego','barbie','hello kitty','digimon','kitty','yo gabba gabba!','sesame street','fairies','teeanage mutant ninja turtles','how to train a dragon','monster high','tinker bell','octonauts','kid snippets','kid science','monsters ink','stawberry shortcake','winnie the pooh','polly pocket', 'disney', 'princess'],
+	searchWords = ['full time kid','frozen','minecraft','doggy','lego','barbie','hello kitty','digimon','kitty','yo gabba gabba!','sesame street','fairies','teeanage mutant ninja turtles','how to train a dragon','monster high','tinker bell','octonauts','kid snippets','kid science','monsters ink','stawberry shortcake','winnie the pooh','polly pocket', 'disney', 'princess'],
 	searchFor = '';
 
+
+// var tag = document.createElement('script');
+
+// tag.src = "https://www.youtube.com/iframe_api";
+// var firstScriptTag = document.getElementsByTagName('script')[0];
+// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
 shuffle(listOfWords);
+
+// function onYouTubeIframeAPIReady() {
+// 	player = new YT.Player('player', {
+// 		height: '300',
+// 		width: '100',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMhPErayo5hjHxlTWyNsCAmA'], index: String(Math.floor(Math.random() * 82) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady,
+// 			'onStateChange': onPlayerStateChange
+// 		}
+// 	});
+
+// 	player2 = new YT.Player('player2', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLF7D6D82DC1148673'], index: String(Math.floor(Math.random() * 5) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady2,
+// 			'onStateChange': onPlayerStateChange2
+// 		}
+// 	});
+
+// 	player3 = new YT.Player('player3', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLD1A982F8D26AA80E'], index: String(Math.floor(Math.random() * 10) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady3,
+// 			'onStateChange': onPlayerStateChange3
+// 		}
+// 	});
+// 	player4 = new YT.Player('player4', {
+// 		height: '300',
+// 		width: '100',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjYrkpiSKI6RfAHPiwX_nAh'], index: String(Math.floor(Math.random() * 30) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady4,
+// 			'onStateChange': onPlayerStateChange4
+// 		}
+// 	});
+
+// 	player5 = new YT.Player('player5', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PL2EeVKSXvjMjUsdASb4u17N0ZDeq-MGIJ'], index: String(Math.floor(Math.random() * 6) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady5,
+// 			'onStateChange': onPlayerStateChange5
+// 		}
+// 	});
+
+// 	player6 = new YT.Player('player6', {
+// 		height: '300',
+// 		width: '500',
+// 		videoId: 'videoseries',
+// 		playerVars: {'autoplay': 0, 'controls': 1 ,'list':['PLRXl0CbI9TdcVd6RK1VMotJ3RoR5I25RA'], index: String(Math.floor(Math.random() * 30) + 1)},
+// 		events: {
+// 			'onReady': onPlayerReady6,
+// 			'onStateChange': onPlayerStateChange6
+// 		}
+// 	});
+// }
+
+// function onPlayerReady(event) {
+// 	event.target.setShuffle(true);
+// }
 
 function resetPlayer(){
 		$('#gameScreen').show();
@@ -26,6 +104,93 @@ function resetPlayer(){
 		$('#keyboard').show();
 		playerButton.css('z-index', '-1');
 };
+
+// function onPlayerStateChange(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// }
+// function onPlayerReady2(event) {
+// 	event.target.setShuffle(true);
+// }
+
+// function onPlayerStateChange2(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player2.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
+// function onPlayerReady3(event) {
+// 	event.target.setShuffle(true);
+// }
+
+// function onPlayerStateChange3(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player3.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// 	// if (event.data === 1){
+// 	// 	var timer = setTimeout(function(){
+// 	// 		player3.pauseVideo();
+// 	// 	},240000);
+// 	// };
+// 	// if(event.data === 2) {
+// 	// 	clearTimeout(timer);
+// 	// 	resetPlayer();
+// 	// };
+// }
+// function onPlayerReady4(event) {
+// 	event.target.setShuffle(true);
+// }
+
+// function onPlayerStateChange4(event) {
+// 	if (event.data === 0) {
+// 		setTimeout(function(){
+// 			player4.pauseVideo();
+// 			resetPlayer();
+// 		},4000);
+// 	};
+// }
+// function onPlayerReady5(event) {
+// 	event.target.setShuffle(true);
+// }
+
+// function onPlayerStateChange5(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player5.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
+// function onPlayerReady6(event) {
+// 	event.target.setShuffle(true);
+// }
+
+// function onPlayerStateChange6(event) {
+// 	if (event.data === 1){
+// 		var timer = setTimeout(function(){
+// 			player6.pauseVideo();
+// 		},240000);
+// 	};
+// 	if(event.data === 2) {
+// 		clearTimeout(timer);
+// 		resetPlayer();
+// 	};
+// }
 
 function createSearchWordButton(){
 	var rows = 1; //here's your number of rows and columns
@@ -61,7 +226,7 @@ function searchWordClick(){
 
 function searchForVideos(){
   $.ajax({
-    url: 'https://gdata.youtube.com/feeds/api/videos?q='+searchFor+'&start-index=1&safeSearch=strict&max-results=50&h1=en&lr=en&duration=short&orderby=rating&v=2&alt=jsonc',
+    url: 'https://gdata.youtube.com/feeds/api/videos?q='+searchFor+'&start-index=1&safeSearch=strict&max-results=50&restriction=US&duration=short&v=2&alt=jsonc',
     dataType: "json",
     success:  function(data) {
       var youtubeJsonList = data.data.items
@@ -130,8 +295,7 @@ displayWordChosen();
 var matchingLetter = 0,
 	wrongLetter = 0
 
-$('#keyboard li').on('click', function(e){
-	e.preventDefault();
+$('#keyboard li').on('click', function(){
 	var button = $(this).text()
 	$('#inputText p').append(button)
 	if(button === chosenWord[matchingLetter]){
@@ -263,4 +427,4 @@ function shuffle(array) {
 };
 
 
-audio = new Audio('audio/big.mp4')
+

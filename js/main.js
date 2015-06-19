@@ -26,11 +26,15 @@ var shuffledWords = shuffle(data.picked);
 //display word on page
 
 $("div.displayWord").html(
-        '<video width="640" height="264" controls>' +
+        '<video width="640" height="264">' +
         '<source src=./videos/'+chosenWord +'.mp4 type="video/mp4"></source>' +
         '<source src=./videos/'+chosenWord +'.ogv type="video/ogv"></source>' +
         '<source src=./videos/'+chosenWord +'.webm type="video/webm"></source>' +
         '</video>');
+
+$('.displayWord video').on('click', function(){
+    $(this).trigger('play');
+});
 
 function mixWords(){
 
